@@ -1,3 +1,21 @@
+function continueGame(){
+    //step 1: generate a random alphabet
+    const  alphabet = getARandomAlphabet();
+
+    //randomly alphabet showing in screen(show it)
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    currentAlphabetElement.innerText = alphabet;
+    
+}
+
+function play(){
+    hideElementById('home-screen');
+    showElementById('play-ground');
+    continueGame();
+    
+}
+
+
 // function play(){
 //     //step 1: hide the home screen  to hide the screen add the class hidden to the home section
 

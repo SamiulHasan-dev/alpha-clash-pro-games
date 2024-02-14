@@ -5,6 +5,8 @@ function continueGame(){
     //randomly alphabet showing in screen(show it)
     const currentAlphabetElement = document.getElementById('current-alphabet');
     currentAlphabetElement.innerText = alphabet;
+
+    setBackgroundColorById(alphabet);
     
 }
 

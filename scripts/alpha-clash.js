@@ -1,20 +1,18 @@
 
 function handleKeyboardKeyupEvent(event){
-    const playerPress = event.key;
-    console.log('player press:',playerPress);
+    const playerPressed = event.key;
 
-    //get the expected to press
+    //key player is expected to press
     const currentAlphabetElements = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElements.innerText;
     const expectedAlphabet = currentAlphabet.toLowerCase();
-    console.log(playerPress, expectedAlphabet);
 
-    // check match or not
-    if(playerPress === expectedAlphabet){
-        console.log('get a point');
+    //check match or not
+    if(playerPressed === expectedAlphabet){
+        console.log('You got a point');
     }
     else{
-        console.log('you missed point');
+        console.log('missed point');
     }
 }
 

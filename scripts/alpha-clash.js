@@ -10,9 +10,32 @@ function handleKeyboardKeyupEvent(event){
     //check match or not
     if(playerPressed === expectedAlphabet){
         console.log('You got a point');
+        console.log('You have pressed currently', expectedAlphabet);
+        //update score
+        // 1.get the current score
+        const currentScoreElement = document.getElementById('current-score');
+        const currentScoreText = currentScoreElement.innerText;
+        const currentScore = parseInt(currentScoreText);
+        console.log(currentScoreText);
+        // 2.increase the score
+        const newScore = currentScore + 1;
+        // 3.show the update score
+        currentScoreElement.innerText = newScore;
+        // start a new round
+        removeBackgroundColorById(expectedAlphabet);
+        continueGame();
     }
     else{
         console.log('missed point');
+        // step 1: get the current life number
+        const currentLifeElement = document.getElementById('current-life');
+        const currentLifeText = currentLifeElement.innerText;
+        const currentLife = parseInt(currentLifeText);
+        console.log(currentLifeText);
+        //step 2: reduce the count
+        const life = currentLife - 1;
+        //step 3: display the updated life count
+        currentLifeElement.innerText = life;
     }
 }
 
@@ -22,7 +45,7 @@ document.addEventListener('keyup',handleKeyboardKeyupEvent);
 function continueGame(){
     //step 1: generate a random alphabet
     const  alphabet = getARandomAlphabet();
-    console.log('Your Random Alphabet',alphabet);
+    // console.log('Your Random Alphabet',alphabet);
 
     //randomly alphabet showing in screen(show it)
     const currentAlphabetElement = document.getElementById('current-alphabet'); 

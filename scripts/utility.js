@@ -20,6 +20,13 @@ function removeBackgroundColorById(elementId){
 
 }
 
+function getTextElementValueByID(elementId){
+    const element = document.getElementById(elementId);
+    const elementValueText = element.innerText;
+    const value = parseInt(elementValueText);
+    return value;
+}
+
 
 function getARandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';

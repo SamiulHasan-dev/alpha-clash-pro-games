@@ -11,6 +11,12 @@ function handleKeyboardKeyupEvent(event){
     if(playerPressed === expectedAlphabet){
         console.log('You got a point');
         console.log('You have pressed currently', expectedAlphabet);
+
+        const currentScore = getTextElementValueByID('current-score');
+        const updatedScore = currentScore + 1;
+        setTextElementValueById('current-score',updatedScore);
+
+        //-------------------
         //update score
         // 1.get the current score
         // const currentScoreElement = document.getElementById('current-score');
@@ -30,6 +36,12 @@ function handleKeyboardKeyupEvent(event){
     else{
         console.log('missed point');
 
+        const currentLife = getTextElementValueByID('current-life');
+        const updatedLife = currentLife - 1;
+        setTextElementValueById('current-life',updatedLife);
+
+
+        //---------------------
         // update life
         // // step 1: get the current life number
         // const currentLifeElement = document.getElementById('current-life');
